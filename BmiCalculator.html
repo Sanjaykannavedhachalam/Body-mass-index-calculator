@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* CSS code goes here */
+    body {
+      background: url(https://images.freecreatives.com/wp-content/uploads/2016/04/Website-Backgrounds-For-Desktop.jpg);
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .calculator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      margin: 0 auto;
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .calculator input[type="number"],
+    .calculator button {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .calculator button {
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .calculator button:hover {
+      background-color: #555;
+    }
+
+    #result {
+      font-size: 18px;
+    }
+  </style>
+  <script>
+    // JavaScript code goes here
+    function calculate() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+
+      var result=num1/(num2*num2) ;
+
+      document.getElementById("result").innerHTML = "BMI : " + result;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Body Mass Index Calculator</h1>
+  </header>
+  <main>
+    <div class="calculator">
+      <input type="number" id="num1" placeholder="Enter a Weight(in kg)">
+      <input type="number" id="num2" placeholder="Enter a Height(in m)">
+      <button onclick="calculate()">Calculate</button>
+      <p id="result"></p>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 BMI Calculator</p>
+  </footer>
+</body>
+</html>
